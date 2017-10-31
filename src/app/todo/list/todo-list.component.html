@@ -1,0 +1,15 @@
+<h2>
+    Your todo list
+</h2>
+
+<div *ngIf="this.todoEmpty()">
+    Oops, your todo list is empty !!
+</div>
+
+<div *ngIf="!this.todoEmpty()">
+    <ul>
+        <li *ngFor="let todoItem of this.getTodoList()">
+            <input type="checkbox" (click)="markTodoComplete(todoItem.id)" >{{ todoItem.item }}
+        </li>
+    </ul>
+</div>
